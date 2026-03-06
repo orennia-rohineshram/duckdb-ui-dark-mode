@@ -145,6 +145,101 @@ html, body {
 ::-webkit-scrollbar-thumb { background: #343840; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
 ::selection { background: rgba(100, 112, 221, 0.35); color: #e5e7eb; }
+
+/* ── CodeMirror / SQL editor overrides ── */
+/* The UI's CodeMirror theme uses high-specificity scoped selectors
+   (e.g. .ͼ13 .cm-scroller .cm-gutters { background-color: white })
+   that hardcode light-mode colors. We use !important to override them. */
+
+.cm-editor {
+  color: #e5e7eb !important;
+}
+
+.cm-scroller .cm-gutters,
+.cm-gutters {
+  background-color: #1a1b1e !important;
+  color: #8b929e !important;
+  border-right-color: #2a2c31 !important;
+}
+
+.cm-gutters .cm-lineNumbers,
+.cm-lineNumbers {
+  color: rgba(155, 165, 180, 0.7) !important;
+}
+
+.cm-gutters .cm-lineNumbers .cm-gutterElement,
+.cm-lineNumbers .cm-gutterElement {
+  color: rgba(155, 165, 180, 0.7) !important;
+}
+
+.cm-activeLineGutter {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #b0b7c3 !important;
+}
+
+.cm-activeLine {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.cm-cursor,
+.cm-cursor-primary {
+  border-left-color: #e5e7eb !important;
+}
+
+.cm-selectionBackground,
+.cm-editor .cm-selectionBackground,
+.cm-focused .cm-selectionBackground,
+::selection {
+  background-color: rgba(100, 112, 221, 0.35) !important;
+}
+
+/* Autocomplete / tooltip */
+.cm-tooltip {
+  background-color: #1a1b1e !important;
+  color: #e5e7eb !important;
+  border-color: #343840 !important;
+}
+
+.cm-tooltip-autocomplete ul li[aria-selected] {
+  background-color: #2a2c31 !important;
+  color: #e5e7eb !important;
+}
+
+.cm-tooltip.cm-tooltip-autocomplete {
+  background-color: #1a1b1e !important;
+  border: 1px solid #343840 !important;
+}
+
+/* Search panel */
+.cm-panels {
+  background-color: #1a1b1e !important;
+  color: #e5e7eb !important;
+  border-color: #343840 !important;
+}
+
+.cm-search input,
+.cm-search button {
+  background-color: #262830 !important;
+  color: #e5e7eb !important;
+  border-color: #343840 !important;
+}
+
+/* Matching brackets */
+.cm-matchingBracket {
+  background-color: rgba(100, 112, 221, 0.25) !important;
+  color: #e5e7eb !important;
+}
+
+/* Fold gutter */
+.cm-foldGutter .cm-gutterElement {
+  color: #8b929e !important;
+}
+
+/* Running statement gutter marker */
+.cm-running-block-marker,
+.cm-running-statement-gutter {
+  color: #8b929e !important;
+}
 )CSS";
 
 // Build the <style> block to inject into HTML <head>.
