@@ -1,0 +1,12 @@
+# name: test/sql/ui_dark_mode.test
+# description: test ui_dark_mode extension
+# group: [sql]
+
+# Require statement will ensure this test is run with this extension loaded
+require ui_dark_mode
+
+# Confirm the extension is loaded
+query I
+SELECT loaded FROM duckdb_extensions() WHERE extension_name = 'ui_dark_mode';
+----
+true
